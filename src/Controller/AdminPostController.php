@@ -26,6 +26,7 @@ final class AdminPostController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $post = new Post();
+        $post->setPostIsPublished(false);
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
