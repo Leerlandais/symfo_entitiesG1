@@ -11,7 +11,7 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
+    <body class="d-flex flex-column justify-content-center align-items-center bg-success-subtle">
     {% include "main/menu.html.twig" %}
         {% block body %}{% endblock %}
     </body>
