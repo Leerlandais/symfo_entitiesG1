@@ -1,8 +1,9 @@
-{% extends 'template.front.html.twiggit ' %}
+{% extends 'template.front.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+{% block main %}
     <form method="post">
         {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -38,4 +39,5 @@
             Sign in
         </button>
     </form>
+    {% endblock %}
 {% endblock %}
