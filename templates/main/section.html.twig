@@ -1,0 +1,20 @@
+{% extends 'template.front.html.twig' %}
+
+{% block title %}{{ parent() }} | {{ title }}{% endblock %}
+
+
+
+{% block header %}
+    <div class="example-wrapper">
+        <h1>Hello {{ title }}</h1>
+    </div>
+{{ dump(section) }}
+    {%  endblock %}
+
+{% block main %}
+{% for post in section.posts %}
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.text }}</p>
+    {% endfor %}
+{% endblock %}
+

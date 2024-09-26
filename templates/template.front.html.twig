@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block content %}
-    {% block nav %}
-        {% include "main/_menu.html.twig" %}
-    {% endblock %}
 
-    {% block header %}
-<div class="container mt-5">
-   <div class="row">
-       <div class="col-lg-8">
-    {% endblock %}
 
     {% block main %}
+        {% block content %}
+            {% block nav %}
+                {% include "main/_menu.html.twig" %}
+            {% endblock %}
+
+            {% block header %}
+                <div class="container mt-5">
+                <div class="row">
+                <div class="col-lg-8">
+            {% endblock %}
         <!-- Post content-->
         <article>
             <!-- Post header-->
