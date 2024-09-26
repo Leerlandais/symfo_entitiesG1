@@ -2,11 +2,11 @@
 
 
 
-    {% block main %}
         {% block content %}
             {% block nav %}
                 {% include "main/_menu.html.twig" %}
-            {% endblock %}
+
+    {% block main %}
 
             {% block header %}
                 <div class="container mt-5">
@@ -18,7 +18,7 @@
             <!-- Post header-->
             <header class="mb-4">
                 <!-- Post title-->
-                <h1 class="fw-bolder mb-1">Welcome to Blog Postsssss!</h1>
+                <h1 class="fw-bolder mb-1">Welcome to Blog Posts!</h1>
                 <!-- Post meta content-->
                 <div class="text-muted fst-italic mb-2">Posted on January 1, 2023 by Start Bootstrap</div>
                 <!-- Post categories-->
@@ -89,4 +89,5 @@
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; EntitiesG1 {{ ("now" | date("Y")) }}</p></div>
         </footer>
     {% endblock %}
+            {% endblock %}
 {% endblock %}

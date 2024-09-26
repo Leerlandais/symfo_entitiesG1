@@ -38,7 +38,8 @@ class MainController extends AbstractController
         $section = $sections->find($id);
         return $this->render('main/section.html.twig',
             ['title' => 'Section '.$section->getSectionTitle(),
-                'section' => $sections->find($id),
+                'homepage_text' => "Code, Eat, Sleep, Repeat",
+                'section' => $section,
                 'sections' => $sections->findAll()]);
     }
 

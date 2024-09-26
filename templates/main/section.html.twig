@@ -1,20 +1,30 @@
 {% extends 'template.front.html.twig' %}
-
+{# on surcharge le block parent #}
 {% block title %}{{ parent() }} | {{ title }}{% endblock %}
 
-
-
 {% block header %}
-    <div class="example-wrapper">
-        <h1>Hello {{ title }}</h1>
-    </div>
-{{ dump(section) }}
-    {%  endblock %}
+    <h1>{{ title }}</h1>
+    <p>{{ homepage_text }}</p>
 
-{% block main %}
-{% for post in section.posts %}
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.text }}</p>
+{% endblock %}
+{% block content %}
+{% block nav %}
+    {{ parent() }}
+{% endblock %}
+
+    {% for post in section.posts %}
+
+        <h4>{{ post.postTitle }}</h4>
+        <p>Ecrit par : {{ post.user.username }}</p>
+        <p>{{ post.postText }}</p>
+
+        {% for section in post.sections %}
+            <a href="{{ path('section',{id:section.id}) }}">{{ section.sectionTitle }}</a>
+            {% else %}
+                <h3>Pas encore de section</h3>
+            {% endfor %}
+        {% else %}
+        <h4>Pas encore d'article</h4>
     {% endfor %}
 {% endblock %}
 
